@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto de Venta - La Casa de la Hamburguesa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="logo">🍔 La Casa de la Hamburguesa</h1>
+        <nav class="navbar">
+            <button class="nav-button active" data-category="Comidas">Comidas</button>
+            <button class="nav-button" data-category="Bebidas">Bebidas</button>
+            <button class="nav-button" data-category="Postres">Postres</button>
+            <button class="nav-button" data-category="Extras">Extras</button>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        
+        <section class="menu-items">
+            </section>
+
+        <section class="order-summary">
+            <h2 class="section-title">Nueva orden</h2>
+            <div class="client-info">
+                <input type="text" id="client-name" placeholder="Nombre del cliente" class="client-name-input">
+            </div>
+            
+            <ul id="order-list" class="order-list">
+                </ul>
+            
+            <div class="order-total">
+                <span>Total:</span>
+                <span id="total-price">$0.00</span>
+            </div>
+            
+            <div class="order-buttons">
+                <button id="send-order" class="send-button">Enviar</button>
+                <button id="cancel-order" class="cancel-button">Cancelar</button>
+            </div>
+        </section>
+
+        <section id="order-list-history" class="order-history">
+            <h2 class="section-title">Comandas en Espera</h2>
+        </section>
+
+        <section class="daily-total-section">
+            <h2>Total de Ventas del Día</h2>
+            <p id="daily-total">$0.00</p>
+            <button id="close-day-button">Cerrar Día</button>
+        </section>
+
+    </main>
+    
+    <div id="customization-modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modal-title"></h3>
+            <div id="modal-options" class="modal-options">
+                </div>
+            <div class="modal-buttons">
+                <button id="modal-add" class="send-button">Agregar a la orden</button>
+                <button id="modal-cancel" class="cancel-button">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

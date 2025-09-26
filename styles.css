@@ -1,0 +1,506 @@
+:root {
+    --primary-red: #d32f2f; /* Rojo sutil */
+    --primary-yellow: #fbc02d; /* Amarillo sutil */
+    --neutral-light: #f5f5f5; /* Gris claro */
+    --neutral-medium: #e0e0e0; /* Gris medio */
+    --neutral-dark: #757575; /* Gris oscuro para textos */
+    --background-color: #ffffff; /* Blanco */
+    --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--neutral-light);
+    color: var(--neutral-dark);
+}
+
+.header {
+    background-image: url(/fondo.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--card-shadow);
+}
+
+.logo {
+    font-size: 2rem;
+    color: var(--primary-red);
+}
+
+.navbar {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--neutral-dark);
+    background-color: var(--neutral-light);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: var(--neutral-medium);
+}
+
+.nav-button.active {
+    background-color: var(--primary-red);
+    color: var(--background-color);
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.menu-card {
+    background-color: var(--background-color);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 120px;
+    justify-content: center;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.menu-card-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.menu-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-red);
+    margin-bottom: 0.5rem;
+}
+
+.menu-card-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--neutral-dark);
+}
+
+.order-summary {
+    background-color: var(--background-color);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: var(--primary-red);
+    margin-bottom: 1.5rem;
+}
+
+.client-info {
+    margin-bottom: 1rem;
+}
+
+.client-name-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--neutral-medium);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.order-list {
+    list-style: none;
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--neutral-medium);
+}
+
+.item-info {
+    font-size: 1rem;
+    color: var(--neutral-dark);
+}
+
+.item-price {
+    font-weight: bold;
+    color: var(--primary-red);
+}
+
+.remove-item {
+    background-color: transparent;
+    border: none;
+    color: var(--neutral-dark);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--primary-red);
+}
+
+.order-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.send-button, .cancel-button {
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    flex-grow: 1;
+    transition: background-color 0.3s;
+}
+
+.send-button {
+    background-color: var(--primary-red);
+    color: var(--background-color);
+}
+
+.send-button:hover {
+    background-color: #b71c1c;
+}
+
+.cancel-button {
+    background-color: var(--neutral-medium);
+    color: var(--neutral-dark);
+}
+
+.cancel-button:hover {
+    background-color: #c0c0c0;
+}
+
+/* --- Estilos para el Historial de Comandas --- */
+.order-history {
+    background-color: var(--neutral-light);
+    border-radius: 12px;
+    padding: 2rem;
+    grid-column: 1 / -1; /* Ocupa todo el ancho */
+    box-shadow: var(--card-shadow);
+
+    /* NUEVOS ESTILOS */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem; /* Espacio entre las comandas */
+    justify-content: flex-start; /* Alinea las comandas al inicio */
+}
+
+.order-history .section-title {
+    text-align: left; /* Alinea el título a la izquierda para un mejor flujo */
+    width: 100%; /* Asegura que el título ocupe todo el ancho */
+    margin-bottom: 1.5rem;
+}
+
+.command {
+    background-color: var(--background-color);
+    border: 1px solid var(--neutral-medium);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+    /* NUEVOS ESTILOS */
+    flex-basis: 300px; /* Ancho preferido para cada comanda */
+    flex-grow: 1; /* Permite que la comanda crezca para llenar el espacio */
+    box-sizing: border-box; /* Asegura que padding y border se incluyan en el ancho */
+}
+
+.command-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed var(--neutral-medium);
+}
+
+.command-header h4 {
+    font-size: 1.2rem;
+    color: var(--neutral-dark);
+}
+
+.command-header .command-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-red);
+}
+
+.command-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+}
+
+.command-list li {
+    font-size: 1rem;
+    color: var(--neutral-dark);
+    line-height: 1.5;
+}
+
+.command-buttons {
+    text-align: right;
+}
+
+.paid-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.paid-button:hover {
+    background-color: #45a049;
+}
+
+.paid-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.paid-button:hover {
+    background-color: #45a049;
+}
+
+/* --- Sección para el Total de Ventas del Día --- */
+.daily-total-section {
+    grid-column: 1 / -1;
+    text-align: center;
+    background-color: var(--background-color);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    margin-top: 2rem;
+}
+
+.daily-total-section h2 {
+    font-size: 1.5rem;
+    color: var(--neutral-dark);
+}
+
+.daily-total-section p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-red);
+    margin: 0.5rem 0;
+}
+
+#close-day-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #2c3e50; /* Color oscuro */
+    color: white;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+#close-day-button:hover {
+    background-color: #34495e;
+}
+
+/* --- Estilos para el Modal de Personalización --- */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.is-visible {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modal.is-visible .modal-content {
+    transform: translateY(0);
+}
+
+.modal h3{
+    padding: 0 0 1rem 0;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    color: var(--primary-red);
+    margin-bottom: 1.5rem;
+}
+
+.modal-options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-options label {
+    font-size: 1rem;
+    color: var(--neutral-dark);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.modal-options input[type="checkbox"] {
+    margin-right: 0.5rem;
+    transform: scale(1.2);
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.modal-buttons .send-button,
+.modal-buttons .cancel-button {
+    flex-grow: 1;
+}
+
+/* --- Media Queries para Responsividad --- */
+
+/* Tabletas (Ancho de 768px a 1024px) */
+@media (max-width: 1024px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .order-summary {
+        order: -1; /* Mueve la orden al inicio en dispositivos móviles */
+    }
+}
+
+/* Teléfonos (Ancho hasta 767px) */
+@media (max-width: 767px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .main-container {
+        padding: 1rem;
+    }
+
+    .menu-items {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .menu-card {
+        height: 100px;
+    }
+
+    .menu-card-title {
+        font-size: 1rem;
+    }
+
+    .menu-card-price {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .client-name-input,
+    .order-total,
+    .order-buttons .send-button,
+    .order-buttons .cancel-button {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+}
