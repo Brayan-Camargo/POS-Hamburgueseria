@@ -8,13 +8,13 @@ const menuData = {
         { id: 'c5', name: 'Hamburguesa c/ Aros de Cebolla', price: 75, customizable: ['Sin cebolla', 'Sin catsup', 'Sin mostaza', 'Sin picante'] },
         { id: 'c6', name: 'Hot Dog', price: 17, customizable: ['Sin cebolla', 'Sin catsup', 'Sin mostaza', 'Sin picante'] },
         { id: 'c7', name: 'Hot Dog c/ Tocino', price: 20, customizable: ['Sin cebolla', 'Sin catsup', 'Sin mostaza', 'Sin picante'] },
-        { id: 'c8', name: 'Papas a la Francesa', price: 35, customizable: ['Sin sal', 'Extra catsup'] },
-        { id: 'c9', name: 'Papas a la Francesa c/ Queso', price: 40, customizable: ['Sin sal'] },
+        { id: 'c8', name: 'Papas a la Francesa', price: 35, customizable: ['Sin sal', 'Sin catsup', 'Sin mostaza','Sin picante'] },
+        { id: 'c9', name: 'Papas a la Francesa c/ Queso', price: 40, customizable: ['Sin sal', 'Sin catsup', 'Sin mostaza','Sin picante'] },
         { id: 'c10', name: 'Nachos con Queso', price: 40, customizable: ['Sin jalapeños'] },
         { id: 'c11', name: 'Nachos con Carne', price: 55, customizable: ['Sin jalapeños'] },
-        { id: 'c12', name: 'Banderillas', price: 25, customizable: [] },
-        { id: 'c13', name: 'Aros de Cebolla', price: 40, customizable: [] },
-        { id: 'c14', name: 'Alitas Adobadas BBQ', price: 70, customizable: [] },
+        { id: 'c12', name: 'Banderillas', price: 25, customizable: ['Sin queso', 'Sin picante'] },
+        { id: 'c13', name: 'Aros de Cebolla', price: 40, customizable: ['Sin catsup', 'Sin mostaza', 'Sin picante'] },
+        { id: 'c14', name: 'Alitas Adobadas BBQ', price: 70, customizable: ['Sin BBK', 'Sin picante', 'Sin limon' ] },
         { id: 'c15', name: 'Refresco', price: 24, customizable: [] }
     ],
     Bebidas: [
